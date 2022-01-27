@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="age" id="age">
+    <button onclick="aged()">confirm</button>
+    <script>
+        function aged() {
+            let num =document.getElementById("age").value
+            if(typeof(num)!=String){
+                if(num>0)
+                {
+                    if(num>=18 && 120>num){
+                        alert("eligible for vote")
+                    }
+                    else{
+                        alert("not eligible for vote")
+                }
+                    }
+                    else{
+                    alert("please enter number")
+                    }
+            }   
+        }
+    </script>
+</body>
+</html>

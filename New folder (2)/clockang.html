@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="hours" id="hr"><br>
+
+    <input type="number" placeholder="minutes" id="mn"><br>
+
+
+
+    <button onclick= "clockAngle()">angle</button>
+    <p id="ang"></p>
+    <p id="angl"></p>
+    
+
+
+
+    <script>
+
+        function clockAngle(){
+
+        var h= parseInt(document.getElementById("hr").value);
+
+        var m= parseInt(document.getElementById("mn").value);
+        
+        // var c=0;
+        // var a=(30*(h)-(11*(m)/2));
+        // var c= math.abs(a);
+        // var b=(360-c);
+
+        // console.log(a);
+
+        var a= h*30;
+        var b= m*0.5;
+        var c= m*6;
+        var d= (a+b-c);
+        if(d<0){
+            e= (-1*d);
+        }else{
+            e=1*d;
+        }
+
+        var g= 360-e;
+
+        document.getElementById("ang").innerHTML="clockAngle =" +e;
+        document.getElementById("angl").innerHTML="clockAngle =" +g;
+
+        } 
+    </script>
+</body>
+</html>

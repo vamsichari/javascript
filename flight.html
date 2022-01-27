@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+  <style>
+    th,tr{
+      text-align: center;
+    }
+    table,th,td{
+      border: 1px solid black;
+    }
+</style>
+    <div class="con">
+        <table class="table table-striped">
+           <thead>
+               <tr class="bg-info">	
+                   <th>HOURS</th>
+                   <th>COUNT</th>
+                   <th>AIR INDIA</th>
+                   <th>SPICEJET</th>
+                   <th>KINGFISHER</th>
+               </tr>
+           </thead>
+           <tbody id="count">
+           </tbody>
+       </table>  
+     </div>
+    <script>
+        let data=[
+            {
+              trnHour : 0,
+              paxCount : 1,
+              airline : "airindia"  
+            },
+            {
+              trnHour : 3,
+              paxCount : 2,
+              airline : "spicejet"  
+            },
+            {
+              trnHour : 2,
+              paxCount : 5,
+              airline : "kingfisher"  
+            },
+            {
+              trnHour : 2,
+              paxCount : 4,
+              airline : "spicejet"  
+            },
+            {
+              trnHour : 0,
+              paxCount : 3,
+              airline : "kingfisher"  
+            },
+            {
+              trnHour : 1,
+              paxCount : 4,
+              airline : "airindia"  
+            },
+            {
+              trnHour : 0,
+              paxCount : 1,
+              airline : "kingfisher"  
+            },
+            {
+              trnHour : 2,
+              paxCount : 3,
+              airline : "airindia"  
+            },
+            {
+              trnHour : 0,
+              paxCount : 1,
+              airline : "spicejet"  
+            },
+        ]
+        
+    
+
+  let flgt=data.reduce((prev, curr) =>{
+    let key = curr.trnHour
+    if (!prev[key]) {
+      prev[key] = []
+    }
+    prev[key].push(curr)
+    // console.log(prev[key]);
+    return prev
+  }, {})
+
+console.log(flgt)
+
+// let x =flgt.flat();
+// console.log(x)
+
+
+for(i=0;i<data.length;i++){
+              //  var creatCount=document.getElementById("count")
+               var creatCount=document.querySelector("#count")
+            var row=`<tr>
+                <td>${i+ "-"+(i+1)}</td>
+                <td>${data[i].trnHour + data[i].trnHour + data[i].trnHour }</td>
+                <td>${data[i].trnHour}</td>
+                <td>${data[i].trnHour}</td>
+                <td>${data[i].trnHour}</td>
+                </tr>`
+                creatCount.innerHTML +=row; 
+            }
+
+    </script>
+</body>
+</html>

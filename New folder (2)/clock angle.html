@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+function angle(h, m, check) { 
+  h = h % 12;
+  
+  var hm = 0.5 * m, 
+      hh = 30 * h, 
+      ma = 6 * m, 
+      sum = Math.abs(hm + hh - ma); 
+
+  return check ? 360 - sum : sum;
+}
+
+//test cases
+
+console.log("12:01", angle(12, 01)); 
+console.log("12:00", angle(12, 00)); 
+console.log("16:42", angle(16, 42)); 
+console.log("11:01", angle(11, 01)); 
+console.log("4:42", angle(4, 42)); 
+console.log("4:42", angle(4, 42, true)); 
+console.log("00:01", angle(00, 01)); 
+console.log("24:01", angle(24, 01));
+</script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="register.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
+    <script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
+</head>
+<style>
+	th, td, p, input {
+		font:14px Verdana;
+	}
+	table, th, td 
+	{
+		border: solid 5px #DDD;
+		border-collapse: collapse;
+		padding: 3px 5px;
+		text-align: center;
+	}
+	th {
+		font-weight:bold;
+	}
+</style>
+<body>
+	<table id="myTable" >
+		<thead>
+			<tr>
+				<th>sl no</th>
+				<th>Trndate</th>
+				<th>paxCount</th>
+				<th>trnHour</th>
+				<th>trnInterval</th>
+			</tr>
+		</thead>
+		<tbody id="t_body">
+
+		</tbody>
+
+	</table>
+
+    <script>
+            fetch('flight.json')
+            .then(response => response.json())
+            .then(data => {var creat = sum(data.summary)});
+            //console.log(data.summary));
+            
+            function sum(a) {
+                console.log(a);
+                //var g= [];
+                //g.push(a);
+                //console.log(g);
+                var body = document.getElementById("t_body");
+                //<..........forloop.........>
+            //     for (let i = 0; i < a.length; i++) {
+            //         var row = `<tr>
+            //     <td>${i+1}</td>
+            //     <td>${a[i].Trndate}</td>
+            //     <td>${a[i].paxCount}</td>
+            //     <td>${a[i].trnHour}</td>
+            //     <td>${a[i].trnInterval}</td>
+            //     </tr>`
+            //     body.innerHTML += row
+            //     console.log(row);
+            // }
+
+            //<..........foreach........>
+            // a.forEach((i,x) => {
+            //     var row = `<tr>
+            //     <td>${x+1}</td>
+            //     <td>${i.Trndate}</td>
+            //     <td>${i.paxCount}</td>
+            //     <td>${i.trnHour}</td>
+            //     <td>${i.trnInterval}</td>
+            //     </tr>`
+            //     body.innerHTML += row
+            //     console.log(row);
+            // });
+
+            // $(document).ready( function () {
+            // $('#myTable').DataTable();
+            // } );
+
+            //<.........jquery........>
+            $(document).ready( function () {
+            $.each(a,(x,i) => {
+                var row = `<tr>
+                <td>${x+1}</td>
+                <td>${i.Trndate}</td>
+                <td>${i.paxCount}</td>
+                <td>${i.trnHour}</td>
+                <td>${i.trnInterval}</td>
+                </tr>`
+                body.innerHTML += row
+                console.log(row);
+            });
+            $('#myTable').DataTable();
+            } );
+            }
+
+            
+        </script>
+        </body>
+        </html>

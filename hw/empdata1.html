@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="register.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+    <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
+    <script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
+</head>
+
+<body>
+
+    <table id= "myTable" border="2">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Gender</th>
+                <th>Bank</th>
+                <th>Active Bank</th>
+                <th>Inactive Bank</th>
+            </tr>
+        </thead>
+        <tbody id="tablesss"></tbody>
+    </table>
+    <script>
+        var employe = [{
+            name: "prasannakumar",
+            id: 12345,
+            gender: "male",
+            mobile: 9248274823,
+            Bank_acc: [
+                {
+                    "Bank_name": "SBI Bank",
+                    "Account_no": "20113897522",
+                    "IFSC_code": "SBIN0009771",
+                    "date": "oct 10, 2021 11:02:05"
+                },
+                {
+                    "Bank_name": "co-operative Bank",
+                    "Account_no": "621585752225",
+                    "IFSC_code": "SBIN0221455",
+                    "date": "oct 20, 2021 11:02:05"
+                },
+                {
+                    "Bank_name": "ICICI Bank",
+                    "Account_no": "0280025452155",
+                    "IFSC_code": "ICICI02800",
+                    "date": "sep 20, 2021 11:02:05"
+                },
+                {
+                    "Bank_name": "idfc Bank",
+                    "Account_no": "15154221725",
+                    "IFSC_code": "AXIS5331725",
+                    "date": "sep 30, 2021 11:02:05"
+
+                },],
+            address: {
+                present: "30/14/02 ,Near SpourtSchool, R.T.C Colon, HYDERABAD-53312,telengana"
+            }
+        },
+        {
+            name: "phani varma",
+            id: 12346,
+            gender: "male",
+            mobile: 9248871823,
+            Bank_acc: [
+                {
+                    "Bank_name": "SBI Bank",
+                    "Account_no": "20113897522",
+                    "IFSC_code": "SBIN0009771",
+                    "date": "oct 10, 2021 11:02:05"
+                },
+                {
+                    "Bank_name": "hdfc Bank",
+                    "Account_no": "621585752225",
+                    "IFSC_code": "SBIN0221455",
+                    "date": "oct 02, 2021 11:02:05"
+                },
+                {
+                    "Bank_name": "union Bank",
+                    "Account_no": "0280025452155",
+                    "IFSC_code": "ICICI02800",
+                    "date": "oct 20, 2021 11:02:05"
+                },
+                {
+                    "Bank_name": "yes Bank",
+                    "Account_no": "15154221725",
+                    "IFSC_code": "AXIS5331725",
+                    "date": "sep 20, 2021 11:02:05"
+                },],
+            address: {
+                present: "11/01/01, Near suziki showroom,T.C Colony, HYDERABAD-533125,telengana"
+            }
+
+        }, {
+            name: "harish",
+            id: 12347,
+            gender: "male",
+            mobile: 9288175823,
+            Bank_acc: [
+                {
+                    "Bank_name": "boroda Bank",
+                    "Account_no": "20113897522",
+                    "IFSC_code": "SBIN0009771",
+                    "date": "oct 02, 2021 11:02:05"
+                },
+                {
+                    "Bank_name": "kotak Bank",
+                    "Account_no": "621585752225",
+                    "IFSC_code": "SBIN0221455",
+                    "date": "oct 20, 2021 11:02:05"
+                },
+                {
+                    "Bank_name": "karnataka Bank",
+                    "Account_no": "0280025452155",
+                    "IFSC_code": "ICICI02800",
+                    "date": "sep 29, 2021 11:02:05"
+                },
+                {
+                    "Bank_name": "bandhan Bank",
+                    "Account_no": "15154221725",
+                    "IFSC_code": "AXIS5331725",
+                    "date": "sep 20, 2021 11:02:05"
+                },],
+            address: {
+                present: "10/41/21, Near big-c,R.TColony, HYDERABAD-533125,telengana"
+
+            }
+        }, {
+            name: "mani",
+            id: 12348,
+            gender: "ale",
+            mobile: 9241284323,
+            Bank_acc: [
+                {
+                    "Bank_name": "SBI Bank",
+                    "Account_no": "20113897522",
+                    "IFSC_code": "SBIN0009771",
+                    "date": "oct 02, 2021 11:02:05"
+                },
+                {
+                    "Bank_name": "SBH Bank",
+                    "Account_no": "621585752225",
+                    "IFSC_code": "SBIN0221455",
+                    "date": "oct 20, 2021 11:02:05"
+                },
+                {
+                    "Bank_name": "ICICI Bank",
+                    "Account_no": "0280025452155",
+                    "IFSC_code": "ICICI02800",
+                    "date": "oct 28, 2021 11:02:05"
+                },
+                {
+                    "Bank_name": "inidan Bank",
+                    "Account_no": "15154221725",
+                    "IFSC_code": "AXIS5331725",
+                    "date": "sep 31, 2021 11:02:05"
+                },
+                {
+                    "Bank_name": "inido Bank",
+                    "Account_no": "15154221725",
+                    "IFSC_code": "AXIS5331725",
+                    "date": "sep 31, 2021 11:02:05"
+
+                }],
+
+
+            address: {
+                present: "35/04/58, Near Spourt School,R.C Colony, HYDERABAD-533125,telengana"
+            }
+        }
+        ];
+        for (i = 0; i < employe.length; i++) {
+            // console.log(employe[i])
+            var banks = [];
+            var active=[];
+            var inactive=[];
+            for (j = 0; j < employe[i].Bank_acc.length; j++) {
+                console.log(employe[i].Bank_acc[j].Bank_name);
+                var a = employe[i].Bank_acc[j].Bank_name;
+                banks.push(a);//console.log(banks)
+                // console.log(employe[i].Bank_acc[j].date)
+                let z = employe[i].Bank_acc[j].date
+                var date1 = new Date();
+                //console.log(x.last_date);
+                //var date2=parseInt(new date("update"));console.log(date2);
+                var date2 = new Date(z);
+                var result = Math.abs(date1 - date2) / 1000;
+                console.log(result);
+                var days = Math.floor(result / 86400);
+                console.log(days);
+
+                if (days <= 30) {
+                    active.push(a);
+                    // console.log("In in active account", banks)
+    
+                }
+                else {
+                    inactive.push(a);
+                    // console.log("In active account", banks)
+                }
+
+            }
+        var row = `<tr>
+        <td>${employe[i].name}</td>
+        <td>${employe[i].mobile}</td>
+        <td>${employe[i].gender}</td>
+        <td>${banks}</td>
+        <td>${active}</td>
+        <td>${inactive}</td>
+        </tr>`
+        console.log(banks);
+        document.getElementById("tablesss").innerHTML += row;
+    }
+        $(document).ready( function () {
+            $('#myTable').DataTable();
+        } );
+    </script>
+
+</body>
+
+</html>
+
+<!-- Registration form (min 8 fields)
+validations for all input fields
+date picker & validations
+saving in local storage -->

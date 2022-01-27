@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="myTable" >
+		<thead>
+			<tr>
+				<th>Sl no</th>
+				<th>Id</th>
+				<th>Employee name</th>
+				<th>Employee age</th>
+				<th>Employee salary</th>
+				<th>Profile image</th>
+			</tr>
+		</thead>
+		<tbody id="t_body">
+
+		</tbody>
+
+	</table>
+
+    <script>
+
+        fetch('https://dummy.restapiexample.com/api/v1/employee/1')
+        .then(response => response.json())
+        .then(json => {var cr = data(json)})
+        
+        //console.log(json))
+        
+        function data(a) {
+            console.log(a)
+            var body = document.getElementById("t_body");
+                //<..........forloop.........>
+                for (let i = 0; i < a.length; i++) {
+                    var row = `<tr>
+                <td>${i+1}</td>
+                <td>${a[i].id}</td>
+                <td>${a[i].employee_name}</td>
+                <td>${a[i].employee_age}</td>
+                <td>${a[i].employee_salary}</td>
+                <td>${a[i].profile_image}</td>
+                </tr>`
+                body.innerHTML += row
+                console.log(row);
+            }
+        }
+
+        
+    // $.ajax({
+    // type: "GET",
+    // url:'http://samples.openweathermap.org/data/2.5/history/city?q=London,UK&appid=XXXXXXXXX',
+    // success: function( response) {
+    //     console.log(response)
+//     }
+// });
+
+    </script>
+</body>
+</html>

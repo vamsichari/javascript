@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = ['a','b','c','d','d','e','a','b','c','f','g','h','h','h','e','a'];
+var map = arr.reduce((pre, cur) => (pre[cur] = pre[cur] + 1 || 1, pre), {});
+console.log(map);
+        // let x=['a','s','d','f','q','w','e','r','t','y','a','s','d','f','y','t','r','e','w','q'];
+        // x.reduce((pre,cur) => {
+        //     if(pre[cur]=pre[cur]){
+
+        //     }
+        // }
+        // )
+    </script>
+</body>
+</html>

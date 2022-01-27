@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="table" id="tab">
+    <button onclick="display()">display</button>
+    
+    <script>
+        function display(){
+        var h=document.getElementById("tab").value;
+        for(i=20;i>=1;i--){
+    k=h*i;
+    console.log( h + "*" + i + "=" + k );
+        }
+}
+    </script>
+</body>
+</html>

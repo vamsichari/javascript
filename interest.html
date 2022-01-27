@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="amount" id="amt"><br>
+
+    <input type="number" placeholder="interest rate" id="int"><br>
+
+    <input type="number" placeholder="tenure" id="tme"><br><br>
+
+    <button onclick="simpleinterest()">interest amount</button>
+    <p id="dff"></p>
+    
+    <p id="asd"></p>
+
+    <p id="hjk"></p>
+
+
+
+    <script>
+
+        function simpleinterest(){
+
+        var x= parseInt(document.getElementById("amt").value);
+        var y= parseInt(document.getElementById("int").value);
+        var z= parseInt(document.getElementById("tme").value);
+
+        var a=((x*y*z)/(12*100));
+        var b=(a+x)/z;
+
+        document.getElementById("dff").innerHTML="simple interest =" +a;
+
+        document.getElementById("asd").innerHTML="amount=" +(a+x);
+
+        document.getElementById("hjk").innerHTML="emi=" +b;
+
+
+        
+
+
+
+
+        // document.writeln("simple interest =" +a);
+        // document.write("<br>");
+        // document.writeln("amount=" +(a+x));
+        // document.write("<br>");
+        // document.writeln("emi=" +b);
+        // console.log(a);
+        // console.log(a+x);
+        // console.log(b);
+
+        } 
+    </script>
+</body>
+</html>

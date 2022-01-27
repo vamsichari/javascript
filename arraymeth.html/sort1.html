@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sort</title>
+</head>
+<body>
+    <script>
+
+        let emps=[
+        {
+            id:"emp007",
+            name:"mani",
+            salary: 16000,
+        },
+        {
+            id:"emp004",
+            name:"sunny",
+            salary: 20000,
+        },
+        {
+            id:"emp005",
+            name:"rajesh",
+            salary: 21000,
+        },
+        {
+            id:"emp001",
+            name:"hemanth",
+            salary: 15000,
+        },
+        {
+            id:"emp002",
+            name:"krishna",
+            salary: 12000,
+        },
+        {
+            id:"emp003",
+            name:"bhargav",
+            salary: 17000,
+        },
+        ];
+        let numSortByName = (a, b) => {
+            if(a.name > b.name) {
+                return 1;
+            }
+                if(a.name < b.name) {
+                    return -1;
+                }
+                return 0;
+        }
+        emps.sort(numSortByName);
+        console.log(emps);
+
+        // let x= [1,2,9,3,4,7,6,8,10,2,23,33,55,5,44];
+        // let numbercompare = (a,b) => {return a-b;}
+        // let y=x.sort(numbercompare);
+        // console.log(y);
+        
+    </script>
+</body>
+</html>

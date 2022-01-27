@@ -1,0 +1,29 @@
+[ { "data":
+    [  {"name":"Teja", "age":"30", "birthdate":"11/10/1989"},
+       {"name":"Sai", "age":"32", "birthdate":"10/1/1989"},
+       {"name":"Raj", "age":"29", "birthdate":"10/14/1990"},
+       {"name":"Hemanth", "age":"25", "birthdate":"11/29/1993"},
+       {"name":"Bhargav", "age":"27", "birthdate":"3/12/1991"},
+       {"name":"Chakri", "age":"24", "birthdate":"10/31/1995"},
+       {"name":"mohan", "age":"24", "birthdate":"10/31/1995"}
+    ]
+} ,{ "teja":
+ [  {"name":"sun", "age":"30", "birthdate":"11/10/1989"},
+    {"name":"solid", "age":"32", "birthdate":"10/1/1989"},
+    {"name":"rat", "age":"29", "birthdate":"10/14/1990"},
+    {"name":"curve", "age":"25", "birthdate":"11/29/1993"},
+    {"name":"Bhargav", "age":"27", "birthdate":"3/12/1991"},
+    {"name":"Chakri", "age":"24", "birthdate":"10/31/1995"},
+    {"name":"mohan", "age":"24", "birthdate":"10/31/1995"}
+ ]
+},
+{ "got":
+ [  {"name":"ajroej", "age":"30", "birthdate":"11/10/1989"},
+    {"name":"nfkasf", "age":"32", "birthdate":"10/1/1989"},
+    {"name":"ksjfdj", "age":"29", "birthdate":"10/14/1990"},
+    {"name":"kjsdnfks", "age":"25", "birthdate":"11/29/1993"},
+    {"name":"fkashf", "age":"27", "birthdate":"3/12/1991"},
+    {"name":"flsnf", "age":"24", "birthdate":"10/31/1995"},
+    {"name":"nfsdf", "age":"24", "birthdate":"10/31/1995"}
+ ]
+}]

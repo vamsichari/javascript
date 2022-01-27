@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jsondata1</title>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">  
+  
+</head>
+<body>
+    <div class="container">
+        <table class="table">
+           <thead>
+               <tr>	<th>HOUR'S</th>
+                   <th>COUNT</th>
+                   <th>AIR INDIA</th>
+                   <th>SPICEJET</th>
+                   <th>KINGFISHER</th>
+               </tr>
+           </thead>
+           <tbody id="count">
+           </tbody>
+       </table>  
+     </div>
+     <!-- <div class="container">
+        <table class="table">
+           <thead>
+               <tr>	<th>HOUR'S</th>
+                   <th>COUNT</th>
+                   <th>AIR INDIA</th>
+                   <th>SPICEJET</th>
+                   <th>KINGFISHER</th>
+               </tr>
+           </thead>
+           <tbody id="count1">
+           </tbody>
+       </table>  
+     </div>
+    -->
+    <script>
+     var flights=[
+                 {
+                    trnHour:0,
+                    paxCount:3,
+                    airLine:'airindia'
+                },
+                {
+                    trnHour:1,
+                    paxCount:0,
+                    airLine:'airindia'
+                },
+                {
+                    trnHour:2,
+                    paxCount:2,
+                    airLine:'airindia'
+                },
+                {
+                    trnHour:3,
+                    paxCount:3,
+                    airLine:'airindia'
+                },
+                {
+                    trnHour:0,
+                    paxCount:5,
+                    airLine:'spicejet'
+                },
+                {
+                    trnHour:1,
+                    paxCount:5,
+                    airLine:'spicejet'
+                },
+                {
+                    trnHour:2,
+                    paxCount:5,
+                    airLine:'spicejet'
+                },
+
+                {
+                    trnHour:3,
+                    paxCount:5,
+                    airLine:'spicejet'
+                },
+                {
+                    trnHour:0,
+                    paxCount:5,
+                    airLine:'kingfisher'
+                },
+                {
+                    trnHour:1,
+                    paxCount:5,
+                    airLine:'kingfisher'
+                },
+                {
+                    trnHour:2,
+                    paxCount:3,
+                    airLine:'kingfisher'
+                },
+                {
+                    trnHour:3,
+                    paxCount:1,
+                    airLine:'kingfisher'
+                }];
+               // console.log(flights.paxCount)
+             // var hour=0;
+             var hour=[0,1,2,3];
+              // console.log(hour)
+                var creat=[];arr=[];  emp={};
+          //  var objec={};
+            var names=["airindia","spicejet","kingfisher"]
+    // var creat2=[];
+    // var creat3=[];
+    // var creat4=[];
+
+                             
+      for(var i=0;i<flights.length;i++){ 
+        for(y=0;y<hour.length;y++ ){   
+               if(hour == flights[i].trnHour ){
+                   // for(var j=0;j<names.length;j++){
+                      //  if(flights[i].airLine==names[j]){
+                            creat.push(flights[i].paxCount);
+                        //     objec["get"+j]=parseInt(flights[i].paxCount);
+                        //    // console.log(objec)
+                      //  }
+                  //  }
+            //    }else{
+            //        creat.push(objec);
+            //       // console.log(creat)
+            //        //objec={}
+            //        hour++
+             }
+              
+               }}; console.log(creat);
+    //         var creatCount=document.getElementById("count")
+    //         var row=`<tr>
+    //             <td></td>
+    //             <td></td>
+    //             <td></td>
+    //             </tr>`
+    //             creatCount.innerHTML +=row; 
+    // console.log(creat)
+
+    </script>
+       <script>
+    var sup=flights.reduce((pre,cur)=>{
+        {return {...pre,[cur.trnHour]:cur}}
+
+                   
+    
+          console.log(pre);
+
+
+    },{});console.log(emp);
+    
+    
+    
+    
+    ;console.log(sup)
+           </script>
+           <script>
+               var obj=[];
+            var project=flights.reduce((pre,cur)=>{
+              
+               // console.log(id)
+                var emp={};
+             
+                emp["airline"]=cur.airLine;
+               emp["paxcount"]=cur.paxCount;
+              // console.log(emp);
+               var key=cur.trnHour;
+              if(!pre[key]){
+                pre[key]=[]
+            } pre[key].push(emp);  
+            //console.log(pre)    
+            //console.log(emp)         
+               return pre;
+            
+            },[]);  // flight(project)
+            
+        for(i=0;i<project.length;i++){
+               var creatCount=document.getElementById("count")
+            var row=`<tr>
+                <td>${i+ "-"+(i+1)}</td>
+                <td>${flights[i].paxCount + flights[3].paxCount + flights[2].paxCount }</td>
+                <td>${flights[i].paxCount}</td>
+                <td>${flights[3].paxCount}</td>
+                <td>${flights[2].paxCount}</td>
+                </tr>`
+                creatCount.innerHTML +=row; }
+                // for(i=0;i<project.length;i++){
+                //     var creatCount2 = document.getElementById("count1");
+                //     var col=`<tr>
+                //         <td></td>
+                //         <td></td>
+                //         <td></td>
+                //         <td></td>
+                //         <td></td>
+                //         </tr>`
+                //         creatCount2.innerHTML +=col;
+                // }
+            
+            
+            console.log(project)
+           </script>
+</body>
+</html>

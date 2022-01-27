@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let employees = [
+    { name: "vamsi", salary: 5000, bonus: 500, tax: 1000 },
+    { name: "rajesh", salary: 8000, bonus: 1500, tax: 2500 },
+    { name: "hemanth", salary: 1500, bonus: 500, tax: 200 },
+    { name: "bhargav", salary: 4500, bonus: 1000, tax: 900 },
+];
+
+// let earnings = (obj) => {
+    // newObj = [];
+    // newObj.name = obj.name;
+    // newObj.netEarning = obj.salary + obj.bonus - obj.tax;
+    // return newObj;
+// };
+
+// let newArr = employees.map(earnings);
+// console.log(newArr);
+
+var num=employees.map(earnings);
+
+function earnings(obj){
+    newObj = [];
+    newObj.name = obj.name;
+    newObj.netEarning = obj.salary + obj.bonus - obj.tax;
+    return newObj;
+};
+console.log(num);
+    
+
+
+</script>
+</body>
+</html>

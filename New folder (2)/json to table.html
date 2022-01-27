@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convert JSON Data to HTML Table</title>
+    <style>
+        th, td, p, input {
+            font:14px Verdana;
+        }
+        table, th, td 
+        {
+            border: solid 5px #DDD;
+            border-collapse: collapse;
+            padding: 3px 5px;
+            text-align: center;
+        }
+        th {
+            font-weight:bold;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" onclick="CreateTableFromJSON()" value="Create Table From JSON" />
+    <p id="showData"></p>
+</body>
+
+<script>
+    function CreateTableFromJSON() {
+        var emp = [
+            {
+                "Name": "hemanth",
+                "Employee ID": "tcs001",
+                "Designation": "Software Developer",
+                "Package": "120000",
+                "Current Address": "h no:295,hmt-22,miyapur",
+                "Permanent Address": "h no:6-9-3/1,josyulavari street,Narsapur",
+            },
+            {
+                "Name": "hareeh",
+                "Employee ID": "tcs002",
+                "Designation": "Software Developer",
+                "Package": "900000",
+                "Current Address": "h no:295,hmt-22,miyapur",
+                "Permanent Address": "h no:6-9-3/1,josyulavari street,Narsapur",
+            },
+            {
+                "Name": "sunny",
+                "Employee ID": "tcs003",
+                "Designation": "Software Developer",
+                "Package": "100000",
+                "Current Address": "h no:295,hmt-22,miyapur",
+                "Permanent Address": "h no:6-9-3/1,josyulavari street,Narsapur",
+            },
+            {
+                "Name": "vamsi",
+                "Employee ID": "tcs004",
+                "Designation": "Software Developer",
+                "Package": "800000",
+                "Current Address": "h no:295,hmt-22,miyapur",
+                "Permanent Address": "h no:6-9-3/1,josyulavari street,Narsapur",
+            },
+            {
+                "Name": "rajesh",
+                "Employee ID": "tcs005",
+                "Designation": "Software Developer",
+                "Package": "120000",
+                "Current Address": "h no:295,hmt-22,miyapur",
+                "Permanent Address": "h no:6-9-3/1,josyulavari street,Narsapur",
+            },
+            {
+                "Name": "bhargav",
+                "Employee ID": "tcs006",
+                "Designation": "Software Developer",
+                "Package": "600000",
+                "Current Address": "h no:295,hmt-22,miyapur",
+                "Permanent Address": "h no:6-9-3/1,josyulavari street,Narsapur",
+            }
+        ]
+
+
+        var col = [];
+        for (var i = 0; i < emp.length; i++) {
+            for (var key in emp[i]) {
+                if (col.indexOf(key) === -1) {
+                    col.push(key);
+                }
+            }
+        }
+
+            var table = document.createElement("table");
+
+
+
+        var tr = table.insertRow(-1);                 
+
+        for (var i = 0; i < col.length; i++) {
+            var th = document.createElement("th");     
+            th.innerHTML = col[i];
+            tr.appendChild(th);
+        }
+
+ 
+        for (var i = 0; i < emp.length; i++) {
+
+            tr = table.insertRow(-1);
+
+            for (var j = 0; j < col.length; j++) {
+                var tabCell = tr.insertCell(-1);
+                tabCell.innerHTML = emp[i][col[j]];
+            }
+        }
+
+        var divContainer = document.getElementById("showData");
+        divContainer.innerHTML = "";
+        divContainer.appendChild(table);
+    }
+</script>
+</html>
